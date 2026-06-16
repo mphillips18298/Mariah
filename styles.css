@@ -1,0 +1,517 @@
+:root {
+  --ink: #1e1c19;
+  --muted: #7c756d;
+  --paper: #fffdf9;
+  --paper-soft: #f7f4ed;
+  --line: #e9e1d5;
+  --brown: #3b2e24;
+  --night: #171717;
+  --night-soft: #202020;
+  --radius-lg: 30px;
+  --radius-md: 18px;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  background: var(--night);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 5%, rgba(255, 255, 255, 0.07), transparent 25rem),
+    linear-gradient(180deg, #fbfaf7 0 78%, var(--night) 78% 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.paper-panel {
+  min-height: 74vh;
+  padding: clamp(2rem, 4.8vw, 4.5rem) clamp(1.25rem, 7vw, 8rem)
+    clamp(4rem, 7vw, 6.75rem);
+  background: var(--paper);
+  border-bottom-right-radius: clamp(2rem, 7vw, 7.5rem);
+  box-shadow: 0 1.5rem 5rem rgba(34, 28, 22, 0.08);
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(2.25rem, 5vw, 4.5rem);
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+}
+
+.brand,
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.brand-mark {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.58rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.78fr) minmax(20rem, 1.58fr) minmax(8rem, 0.78fr);
+  align-items: end;
+  gap: clamp(1rem, 2.4vw, 2rem);
+}
+
+.hero-copy {
+  align-self: start;
+  max-width: 18rem;
+  padding-top: clamp(0.25rem, 2vw, 1.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 14ch;
+  margin-bottom: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 3.7vw, 4.25rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.hero-copy p:last-child {
+  max-width: 17rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(0.8rem, 1.2vw, 0.98rem);
+  line-height: 1.6;
+}
+
+.hero-image,
+.sky-card {
+  margin: 0;
+}
+
+.figma-crop {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image .figma-crop {
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1.25rem 2.5rem rgba(36, 31, 25, 0.12);
+}
+
+.hero-image figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.color-card {
+  display: flex;
+  min-height: clamp(12rem, 19vw, 16.5rem);
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 44%),
+    var(--brown);
+  color: #f5eee5;
+}
+
+.color-card span {
+  margin-bottom: 0.3rem;
+  color: rgba(245, 238, 229, 0.62);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.color-card strong {
+  max-width: 8rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.notes-section {
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(10rem, 0.8fr);
+  gap: clamp(2rem, 7vw, 7.5rem);
+  align-items: center;
+  max-width: 58rem;
+  margin: clamp(4rem, 8vw, 8rem) auto 0;
+}
+
+.section-heading {
+  grid-column: 1;
+  margin-bottom: clamp(1.3rem, 2.6vw, 2.2rem);
+}
+
+.note-list {
+  display: grid;
+  grid-column: 1;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note-list a {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr) 0;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.72rem 0;
+  border-top: 1px solid var(--line);
+  transition:
+    color 160ms ease,
+    padding-left 160ms ease;
+}
+
+.note-list li:last-child a {
+  border-bottom: 1px solid var(--line);
+}
+
+.note-list a:hover,
+.note-list a:focus-visible {
+  padding-left: 0.4rem;
+  color: #4b3727;
+}
+
+.note-number {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.note-text {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.note-text strong {
+  font-size: clamp(0.8rem, 1.1vw, 0.92rem);
+  font-weight: 700;
+}
+
+.note-text small {
+  color: var(--muted);
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+  line-height: 1.4;
+}
+
+.note-thumb {
+  display: none;
+}
+
+.sky-card {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-self: center;
+  width: min(100%, 18rem);
+  aspect-ratio: 1;
+}
+
+.sky-card .figma-crop {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.4rem;
+  box-shadow: 0 1.35rem 2.8rem rgba(34, 28, 22, 0.12);
+}
+
+.footer-panel {
+  display: grid;
+  min-height: clamp(21rem, 32vw, 30rem);
+  place-items: center;
+  padding: clamp(2.8rem, 7vw, 6.5rem) 1.5rem clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.08), transparent 12rem),
+    linear-gradient(180deg, var(--night-soft), var(--night));
+  color: #f9f3ea;
+  text-align: center;
+}
+
+.portrait-stack {
+  position: relative;
+  width: clamp(12rem, 20vw, 18rem);
+  height: clamp(5.8rem, 10vw, 8.8rem);
+  margin-bottom: clamp(2.7rem, 5vw, 4.5rem);
+}
+
+.portrait-card {
+  position: absolute;
+  display: block;
+  width: 44%;
+  overflow: hidden;
+  border: 0.28rem solid rgba(255, 255, 255, 0.04);
+  border-radius: 0.55rem;
+  box-shadow: 0 1.5rem 2.6rem rgba(0, 0, 0, 0.28);
+}
+
+.portrait-card--left {
+  left: 1%;
+  top: 18%;
+  transform: rotate(-13deg);
+}
+
+.portrait-card--center {
+  left: 29%;
+  top: 0;
+  z-index: 2;
+  width: 46%;
+}
+
+.portrait-card--right {
+  top: 19%;
+  right: 0;
+  transform: rotate(12deg);
+}
+
+.signature {
+  margin-bottom: 0.85rem;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  color: rgba(249, 243, 234, 0.82);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 1.25rem;
+  color: rgba(249, 243, 234, 0.72);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-links a {
+  transition: color 160ms ease;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .paper-panel {
+    width: min(70%, 42rem);
+    min-width: 24rem;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(7rem, 0.36fr);
+  }
+
+  .hero-copy {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .hero-copy p:last-child {
+    max-width: 28rem;
+  }
+
+  .color-card {
+    min-height: 100%;
+  }
+
+  .notes-section {
+    grid-template-columns: 1fr;
+    max-width: 31rem;
+  }
+
+  .sky-card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .sky-card {
+    width: min(64%, 16rem);
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    background: var(--night);
+  }
+
+  .site-shell {
+    width: min(100%, 430px);
+  }
+
+  .paper-panel {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 2rem 1rem 3.25rem;
+    border-bottom-right-radius: 2.3rem;
+  }
+
+  .masthead {
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .nav-links {
+    gap: 0.6rem;
+    font-size: 0.64rem;
+  }
+
+  .hero-grid {
+    display: block;
+  }
+
+  .hero-copy {
+    margin-bottom: 1.1rem;
+    padding-top: 0;
+  }
+
+  h1 {
+    max-width: 13ch;
+    font-size: clamp(2.5rem, 17vw, 4rem);
+  }
+
+  .hero-copy p:last-child {
+    max-width: 21rem;
+  }
+
+  .hero-image .figma-crop {
+    border-radius: 0.9rem;
+  }
+
+  .color-card {
+    display: none;
+  }
+
+  .notes-section {
+    display: block;
+    margin-top: 3rem;
+  }
+
+  .note-list a {
+    grid-template-columns: 1.8rem minmax(0, 1fr) 3.85rem;
+    gap: 0.8rem;
+    min-height: 4.8rem;
+    padding: 0.85rem 0;
+  }
+
+  .note-thumb {
+    display: block;
+  }
+
+  .note-thumb .figma-crop {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.7rem;
+  }
+
+  .sky-card {
+    display: none;
+  }
+
+  .footer-panel {
+    min-height: 23rem;
+    padding-top: 3.4rem;
+  }
+
+  .portrait-stack {
+    width: 13.25rem;
+    height: 7rem;
+  }
+
+  .signature {
+    font-size: 2.8rem;
+  }
+
+  .contact-links {
+    display: grid;
+    gap: 0.55rem;
+  }
+}
